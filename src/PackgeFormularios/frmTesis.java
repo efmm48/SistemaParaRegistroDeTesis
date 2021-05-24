@@ -426,7 +426,7 @@ public class frmTesis extends javax.swing.JFrame {
         
         try {
             
-           String SQL="update tesis set idTesis=?,universidad=?,tema=?,sustentantes=?,carrera=?,fecha=? where idTesis=?";
+           String SQL="update tesis set idTesis=?,universidad=?,tema=?,sustentantes=?,carrera=?,asesor=?,fecha=? where idTesis=?";
             
            int filaseleccionada=tablaTesis.getSelectedRow();
            String dao=(String) tablaTesis.getValueAt(filaseleccionada, 0);
@@ -445,7 +445,7 @@ public class frmTesis extends javax.swing.JFrame {
             pst.setString(6, txtAsesor.getText());       
             pst.setString(7, txtFecha.getText());
             
-            pst.setString(6, dao);
+            pst.setString(8, dao);
             pst.execute();
             JOptionPane.showMessageDialog(null, "Registro Editado Exitosamente");
             
